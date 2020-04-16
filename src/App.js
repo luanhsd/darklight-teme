@@ -1,12 +1,11 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Routes from './routes'
 
 function App() {
   return (
     <CssBaseline>
-      <div className="App">
-        <h1>Hello World!</h1>
-      </div>
+      <Routes />
     </CssBaseline>
   );
 }
