@@ -13,7 +13,9 @@ export default function Home() {
         <MainTemplate theme={theme}>
             <Header setTheme={() => setTheme(theme.mode === 'dark' ?
                 { mode: 'light' } : { mode: 'dark' }
-            )} />
+            )}
+                Icon={(theme.mode === 'dark' ? 'light' : 'dark')}
+            />
             <Grid container justify="center" alignItems="center">
                 <AvatarStyled alt="XpeeR" src={Xpeer} />
             </Grid>
