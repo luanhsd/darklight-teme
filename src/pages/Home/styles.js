@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Avatar } from '@material-ui/core'
 
 export const Title = styled.h1`
-    color: purple;
+    color: rgb(63,81,181);
 `
 
 export const Links = styled.div`

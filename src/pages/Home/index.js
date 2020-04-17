@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import MainTemplate from '../../templates/MainTemplate'
 import Header from '../../components/Header'
 import { Grid, Container } from '@material-ui/core'
 import Xpeer from '../../assets/luandantas.jpg'
 import { Title, Links, Text, AvatarStyled } from './styles'
 
 export default function Home() {
+    const [theme, setTheme] = useState({ mode: 'light' })
+
+
     return (
-        <div className="app-root">
-            <Header />
+        <MainTemplate theme={theme}>
+            <Header setTheme={() => setTheme(theme.mode === 'dark' ?
+                { mode: 'light' } : { mode: 'dark' }
+            )} />
             <Grid container justify="center" alignItems="center">
                 <AvatarStyled alt="XpeeR" src={Xpeer} />
             </Grid>
@@ -29,6 +35,6 @@ export default function Home() {
                     <p>Nam suscipit, quam eu rhoncus rutrum, mauris neque convallis orci, eget bibendum felis ligula nec nisi. Ut id mauris tempus ante sagittis placerat. Integer vel nisi non ipsum finibus lobortis interdum vel magna. Morbi tempus leo in pellentesque posuere. Nam tempor ac tortor eu dignissim. Aliquam urna odio, scelerisque vitae ligula vitae, dapibus tempor risus. Aenean ipsum ligula, sollicitudin ut diam nec, interdum tempus turpis. Quisque volutpat blandit sem nec lobortis. Phasellus iaculis mi et felis malesuada eleifend. Donec finibus justo eu elit ultricies congue. Curabitur ligula felis, molestie sit amet metus sit amet, commodo finibus odio. Donec aliquet justo id mauris ullamcorper congue. Etiam mollis tortor egestas, dapibus tellus id, fermentum est. Donec vitae ex vel nisi dapibus sagittis. Nulla facilisi.</p>
                 </Text>
             </Container>
-        </div>
+        </MainTemplate>
     );
 }
